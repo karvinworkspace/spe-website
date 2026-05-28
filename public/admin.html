@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Admin Dashboard — Shree Parameswari Enterprises</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="/css/admin.css"/>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-logo">
+      <img src="/images/logo-default.svg" id="sidebarLogo" class="sl-img" alt="Logo"/>
+      <div>
+        <div class="sl-name">SPE Admin</div>
+        <div class="sl-sub">Control Panel</div>
+      </div>
+    </div>
+  </div>
+  <nav class="sidebar-nav">
+    <button class="snav-btn active" onclick="showTab('dashboard')">🏠 Dashboard</button>
+    <button class="snav-btn" onclick="showTab('company')">🏢 Company Info</button>
+    <button class="snav-btn" onclick="showTab('hero')">🎯 Hero Section</button>
+    <button class="snav-btn" onclick="showTab('products')">📦 Products</button>
+    <button class="snav-btn" onclick="showTab('categories')">🏷️ Categories</button>
+    <button class="snav-btn" onclick="showTab('location')">📍 Location</button>
+    <button class="snav-btn" onclick="showTab('contact')">📞 Contact</button>
+  </nav>
+  <div class="sidebar-footer">
+    <a href="/" target="_blank" class="view-site-btn">🌐 View Website</a>
+    <button class="logout-btn" onclick="doLogout()">🔐 Logout</button>
+  </div>
+</aside>
+
+<!-- MOBILE TOPBAR -->
+<div class="mobile-topbar">
+  <button class="mob-menu-btn" onclick="toggleSidebar()">☰</button>
+  <span class="mob-title">SPE Admin</span>
+  <a href="/" target="_blank" class="mob-site">🌐</a>
+</div>
+
+<!-- MAIN CONTENT -->
+<main class="main-content" id="mainContent">
+
+  <!-- ── DASHBOARD ── -->
+  <div class="tab-panel active" id="tab-dashboard">
+    <div class="page-header">
+      <h1>Welcome Back 👋</h1>
+      <p>Manage your entire website from here. Changes are live immediately.</p>
+    </div>
+    <div class="stats-row" id="dashStats"></div>
+    <div class="quick-actions">
+      <h3>Quick Actions</h3>
+      <div class="qa-grid">
+        <button class="qa-btn" onclick="showTab('products');setTimeout(()=>openProductModal(),200)">➕ Add New Product</button>
+        <button class="qa-btn" onclick="showTab('company')">🏢 Edit Company Info</button>
+        <button class="qa-btn" onclick="showTab('hero')">🎯 Edit Hero Section</button>
+        <button class="qa-btn" onclick="showTab('contact')">📞 Update Contact</button>
+      </div>
+    </div>
+    <div class="recent-products">
+      <h3>All Products <span id="prodCount" class="badge-count"></span></h3>
+      <div id="dashProductList"></div>
+    </div>
+  </div>
+
+  <!-- ── COMPANY ── -->
+  <div class="tab-panel" id="tab-company">
+    <div class="page-header">
+      <h1>🏢 Company Info</h1>
+      <p>Update your company name, logo, tagline and branding.</p>
+    </div>
+    <div class="form-card">
+      <div class="logo-upload-section">
+        <img id="logoPreview" src="/images/logo-default.svg" class="logo-preview" alt="Logo"/>
+        <div>
+          <h4>Company Logo</h4>
+          <p>Recommended: Square image, PNG or JPG, min 200×200px</p>
+          <label class="upload-btn">
+            📁 Choose Logo File
+            <input type="file" id="logoFile" accept="image/*" onchange="previewLogo(this)" hidden/>
+          </label>
+          <button class="save-btn sm" onclick="uploadLogo()">Upload Logo</button>
+        </div>
+      </div>
+      <div class="form-grid">
+        <div class="form-group full">
+          <label>Company Name</label>
+          <input type="text" id="compName" placeholder="Shree Parameswari Enterprises"/>
+        </div>
+        <div class="form-group full">
+          <label>Tagline / Subtitle</label>
+          <input type="text" id="compTagline" placeholder="Your trusted supplier…"/>
+        </div>
+      </div>
+      <button class="save-btn" onclick="saveCompany()">💾 Save Company Info</button>
+    </div>
+  </div>
+
+  <!-- ── HERO ── -->
+  <div class="tab-panel" id="tab-hero">
+    <div class="page-header">
+      <h1>🎯 Hero Section</h1>
+      <p>Edit the main banner — heading, description and feature tags.</p>
+    </div>
+    <div class="form-card">
+      <div class="form-grid">
+        <div class="form-group full">
+          <label>Location Badge (top text)</label>
+          <input type="text" id="heroBadgeInp" placeholder="📍 Vadapalani, Chennai"/>
+        </div>
+        <div class="form-group">
+          <label>Main Heading</label>
+          <input type="text" id="heroHeadInp" placeholder="Shree Parameswari"/>
+        </div>
+        <div class="form-group">
+          <label>Highlighted Word</label>
+          <input type="text" id="heroHLInp" placeholder="Enterprises"/>
+        </div>
+        <div class="form-group full">
+          <label>Description Text</label>
+          <textarea id="heroDescInp" rows="3" placeholder="Your trusted one-stop shop…"></textarea>
+        </div>
+        <div class="form-group full">
+          <label>Feature Tags (one per line)</label>
+          <textarea id="heroTagsInp" rows="5" placeholder="✅ Thermocol MD & HD&#10;✅ Foam 3mm – 12mm&#10;✅ Thermorex Black & White"></textarea>
+          <small>Each line becomes one tag badge in the hero section.</small>
+        </div>
+      </div>
+      <button class="save-btn" onclick="saveHero()">💾 Save Hero Section</button>
+    </div>
+  </div>
+
+  <!-- ── PRODUCTS ── -->
+  <div class="tab-panel" id="tab-products">
+    <div class="page-header">
+      <h1>📦 Products</h1>
+      <p>Add, edit or delete products. Changes appear on the website instantly.</p>
+    </div>
+    <div class="products-toolbar">
+      <input type="text" id="productSearch" placeholder="🔍 Search products…" oninput="renderAdminProducts()" class="search-input"/>
+      <button class="add-btn" onclick="openProductModal()">➕ Add New Product</button>
+    </div>
+    <div id="adminProductGrid"></div>
+  </div>
+
+  <!-- ── CATEGORIES ── -->
+  <div class="tab-panel" id="tab-categories">
+    <div class="page-header">
+      <h1>🏷️ Filter Categories</h1>
+      <p>Manage the filter tabs shown on the products section.</p>
+    </div>
+    <div class="form-card">
+      <div id="catList"></div>
+      <div class="cat-add-row">
+        <input type="text" id="newCatInput" placeholder="Type new category name…" class="cat-input"/>
+        <button class="add-btn sm" onclick="addCategory()">Add</button>
+      </div>
+      <button class="save-btn" onclick="saveCategories()" style="margin-top:20px">💾 Save Categories</button>
+    </div>
+  </div>
+
+  <!-- ── LOCATION ── -->
+  <div class="tab-panel" id="tab-location">
+    <div class="page-header">
+      <h1>📍 Location / Maps</h1>
+      <p>Update the Google Maps embed and directions link.</p>
+    </div>
+    <div class="form-card">
+      <div class="form-grid">
+        <div class="form-group full">
+          <label>Google Maps Embed URL</label>
+          <textarea id="mapsEmbed" rows="4" placeholder="Paste the iframe src URL from Google Maps → Share → Embed a map"></textarea>
+          <small>Go to Google Maps → Share → Embed a map → Copy the src="…" URL only</small>
+        </div>
+        <div class="form-group full">
+          <label>Google Maps Share Link (for "Open in Maps" button)</label>
+          <input type="text" id="mapsLink" placeholder="https://maps.app.goo.gl/…"/>
+        </div>
+      </div>
+      <div class="map-preview-box">
+        <iframe id="mapPreviewFrame" src="" allowfullscreen="" loading="lazy" style="width:100%;height:260px;border:none;border-radius:12px"></iframe>
+      </div>
+      <button class="save-btn" onclick="previewMap()">👁️ Preview Map</button>
+      <button class="save-btn" onclick="saveLocation()" style="margin-left:10px">💾 Save Location</button>
+    </div>
+  </div>
+
+  <!-- ── CONTACT ── -->
+  <div class="tab-panel" id="tab-contact">
+    <div class="page-header">
+      <h1>📞 Contact Details</h1>
+      <p>Update phone, WhatsApp, address and business hours.</p>
+    </div>
+    <div class="form-card">
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="text" id="contPhone" placeholder="+91 XXXXX XXXXX"/>
+        </div>
+        <div class="form-group">
+          <label>WhatsApp Number (with country code, no +)</label>
+          <input type="text" id="contWA" placeholder="917604827435"/>
+        </div>
+        <div class="form-group full">
+          <label>Shop Address</label>
+          <textarea id="contAddr" rows="2" placeholder="Full address…"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Business Hours</label>
+          <input type="text" id="contHours" placeholder="Mon – Sat: 9 AM – 7 PM"/>
+        </div>
+        <div class="form-group">
+          <label>Email (optional)</label>
+          <input type="email" id="contEmail" placeholder="shop@example.com"/>
+        </div>
+      </div>
+      <button class="save-btn" onclick="saveContact()">💾 Save Contact Details</button>
+    </div>
+  </div>
+
+</main>
+
+<!-- ═══════ PRODUCT MODAL ═══════ -->
+<div class="modal-overlay" id="prodModalOverlay" onclick="if(event.target===this)closeProdModal()">
+  <div class="modal-box" id="prodModal">
+    <div class="modal-header">
+      <h2 id="prodModalTitle">Add New Product</h2>
+      <button class="modal-close" onclick="closeProdModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <input type="hidden" id="editProductId"/>
+      <div class="form-grid">
+        <div class="form-group full">
+          <label>Product Name *</label>
+          <input type="text" id="pName" placeholder="e.g. Thermocol Sheet — MD"/>
+        </div>
+        <div class="form-group">
+          <label>Category *</label>
+          <select id="pCategory"></select>
+        </div>
+        <div class="form-group">
+          <label>Badge Label</label>
+          <input type="text" id="pBadge" placeholder="e.g. Most Popular, New, Sale"/>
+        </div>
+        <div class="form-group">
+          <label>Badge Color</label>
+          <div style="display:flex;gap:8px;align-items:center">
+            <input type="color" id="pBadgeColor" value="#2563eb" style="width:44px;height:38px;border-radius:8px;border:1px solid #e2e8f0;cursor:pointer;padding:2px"/>
+            <input type="text" id="pBadgeColorText" value="#2563eb" placeholder="#2563eb" oninput="syncColorFromText()" style="flex:1"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Card Background Tint</label>
+          <div style="display:flex;gap:8px;align-items:center">
+            <input type="color" id="pColor" value="#e0f2fe" style="width:44px;height:38px;border-radius:8px;border:1px solid #e2e8f0;cursor:pointer;padding:2px"/>
+            <input type="text" id="pColorText" value="#e0f2fe" placeholder="#e0f2fe" oninput="syncColorFromText2()" style="flex:1"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Icon / Emoji</label>
+          <input type="text" id="pIcon" placeholder="📦" maxlength="4"/>
+        </div>
+        <div class="form-group full">
+          <label>Description *</label>
+          <textarea id="pDesc" rows="3" placeholder="Describe the product…"></textarea>
+        </div>
+        <div class="form-group full">
+          <label>Available Sizes (one per line) *</label>
+          <textarea id="pSizes" rows="5" placeholder="12.5mm (0.5&#34;)&#10;25mm (1&#34;)&#10;50mm (2&#34;)&#10;100mm (4&#34;)"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Sheet / Pack Size Info</label>
+          <input type="text" id="pSheetSize" placeholder="e.g. 8 × 4 ft, Custom sizes"/>
+        </div>
+        <div class="form-group">
+          <label>Quality Label</label>
+          <input type="text" id="pQuality" placeholder="e.g. Medium Density (MD)"/>
+        </div>
+        <div class="form-group full">
+          <label>Product Image</label>
+          <div class="img-upload-area" id="imgUploadArea" onclick="document.getElementById('pImage').click()">
+            <img id="pImgPreview" src="" alt="" style="display:none;max-height:120px;border-radius:8px;margin:0 auto"/>
+            <div id="imgUploadText">
+              <span style="font-size:32px">📷</span>
+              <p>Click to upload image</p>
+              <small>JPG, PNG — max 5MB</small>
+            </div>
+          </div>
+          <input type="file" id="pImage" accept="image/*" onchange="previewProductImg(this)" hidden/>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="cancel-btn" onclick="closeProdModal()">Cancel</button>
+      <button class="save-btn" onclick="saveProduct()">💾 Save Product</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script src="/js/admin.js"></script>
+</body>
+</html>

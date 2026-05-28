@@ -1,0 +1,301 @@
+{
+  "company": {
+    "name": "Shree Parameswari Enterprises",
+    "tagline": "Your trusted one-stop shop for Thermocol, Foam, Cine & Packaging materials",
+    "logo": "/images/logo-default.svg",
+    "phone": "+91 76048 27435",
+    "whatsapp": "917604827435",
+    "email": "shreeparameswarienterprises@gmail.com",
+    "address": "Shop No. 6/2, Arcot Rd, near AVM Studios, Ottagapalayam, Kannika Puram, Vadapalani, Chennai — 600026",
+    "hours": "Mon – Sat: 9:00 AM – 7:00 PM | Sun: Feel Free to Call(Mostly Available)",
+    "mapsEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.8009941645864!2d80.20302737484275!3d13.048335687274138!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5266c3750c4e2f%3A0x34c090ede07f9227!2sSree%20Parameshwari%20Enterprises%20-%20Thermocol%20boxes%20in%20Chennai%2FCine%20Materials%20In%20Chennai!5e0!3m2!1sen!2sin!4v1774977358529!5m2!1sen!2sin",
+    "mapsLink": "https://maps.app.goo.gl/bNWC8Qf17X81pJk99"
+  },
+  "hero": {
+    "badge": "📍 Vadapalani, Chennai — Near AVM Studios",
+    "heading": "Shree Parameswari Enterprises",
+    "headingHighlight": "SPE",
+    "description": "Your trusted one-stop shop for Thermocol Sheets, Ice Boxes, Foam Sheets, Thermorex Sheets and all packaging accessories. All Packaging Materials available. Custom sizes. Bulk orders welcomed. Both Wholesale and Retail.",
+    "tags": [
+      "✅ Thermocol Sheets",
+      "✅ Foam Sheets",
+      "✅ Thermocol Ice Boxes",
+      "✅ Thermorex Black & White",
+      "✅ Adhesives & Tools",
+      "✅ Xps Sheets"
+    ],
+    "stats": [
+      {
+        "val": "12+",
+        "lab": "Product Categories"
+      },
+      {
+        "val": "Custom",
+        "lab": "Sizes on Request"
+      },
+      {
+        "val": "Retail &",
+        "lab": "Wholesale Orders"
+      },
+      {
+        "val": "Trusted",
+        "lab": "Shop in Vadapalani"
+      }
+    ]
+  },
+  "categories": [
+    "thermocol",
+    "foam",
+    "thermorex",
+    "accessories",
+    "xps-sheets"
+  ],
+  "products": [
+    {
+      "id": "thermocol-md",
+      "name": "Thermocol Sheet — MD",
+      "category": "thermocol",
+      "badge": "Most Popular",
+      "badgeColor": "#2563eb",
+      "description": "Medium Density thermocol sheets ideal for packaging, crafts, insulation, display boards and general purpose use. Lightweight yet sturdy.",
+      "sizes": [
+        "12.5mm (0.5\")",
+        "19mm (0.75\")",
+        "25mm (1\")",
+        "38mm (1.5\")",
+        "50mm (2\")",
+        "75mm (3\")",
+        "100mm (4\")",
+        "125mm (5\")",
+        "150mm (6\")",
+        "175mm (7\")",
+        "200mm (8\")",
+        "250mm (10\")",
+        "300mm (12\")",
+        "500mm (20\")"
+      ],
+      "sheetSize": "Custom sizes available on order",
+      "quality": "Medium Density (MD)",
+      "color": "#e0f2fe",
+      "icon": "🧊",
+      "image": ""
+    },
+    {
+      "id": "thermocol-hd",
+      "name": "Thermocol Sheet — HD",
+      "category": "thermocol",
+      "badge": "Heavy Duty",
+      "badgeColor": "#1e40af",
+      "description": "High Density thermocol sheets engineered for structural strength, cold storage insulation, construction and heavy-duty packaging.",
+      "sizes": [
+        "12.5mm (0.5\")",
+        "19mm (0.75\")",
+        "25mm (1\")",
+        "38mm (1.5\")",
+        "50mm (2\")",
+        "75mm (3\")",
+        "100mm (4\")",
+        "125mm (5\")",
+        "150mm (6\")",
+        "175mm (7\")",
+        "200mm (8\")",
+        "250mm (10\")",
+        "300mm (12\")",
+        "500mm (20\")"
+      ],
+      "sheetSize": "Custom sizes available on order",
+      "quality": "High Density (HD)",
+      "color": "#dbeafe",
+      "icon": "🏗️",
+      "image": ""
+    },
+    {
+      "id": "foam",
+      "name": "Foam Sheets",
+      "category": "foam",
+      "badge": "Flexible",
+      "badgeColor": "#0891b2",
+      "description": "Premium quality foam sheets for cushioning, furniture padding, packaging and protective cases. Soft, durable and available in multiple thicknesses.",
+      "sizes": [
+        "3mm",
+        "4mm",
+        "5mm",
+        "6mm",
+        "8mm",
+        "10mm",
+        "12mm"
+      ],
+      "sheetSize": "8 × 4 ft per sheet",
+      "quality": "Standard Grade",
+      "color": "#cffafe",
+      "icon": "🔲",
+      "image": ""
+    },
+    {
+      "id": "thermorex-white",
+      "name": "Thermorex Sheet — White",
+      "category": "thermorex",
+      "badge": "Premium",
+      "badgeColor": "#6366f1",
+      "description": "White Thermorex sheets with excellent surface finish. Used in signage, cladding, partition boards and display applications. Moisture resistant.",
+      "sizes": [
+        "12.5mm (0.5\")",
+        "25mm (1\")",
+        "50mm (2\")"
+      ],
+      "sheetSize": "6 × 3 ft per sheet",
+      "quality": "Thermorex Standard",
+      "color": "#f0f9ff",
+      "icon": "⬜",
+      "image": ""
+    },
+    {
+      "id": "thermorex-black",
+      "name": "Thermorex Sheet — Black",
+      "category": "thermorex",
+      "badge": "Premium",
+      "badgeColor": "#374151",
+      "description": "Black Thermorex sheets for dark signage, backdrops, partition boards and premium display applications. UV resistant and durable.",
+      "sizes": [
+        "12.5mm (0.5\")",
+        "25mm (1\")",
+        "50mm (2\")"
+      ],
+      "sheetSize": "6 × 3 ft per sheet",
+      "quality": "Thermorex Standard",
+      "color": "#f1f5f9",
+      "icon": "⬛",
+      "image": ""
+    },
+    {
+      "id": "fevicol",
+      "name": "Fevicol",
+      "category": "accessories",
+      "badge": "Adhesive",
+      "badgeColor": "#d97706",
+      "description": "High quality Fevicol adhesive for bonding thermocol, foam, wood and packaging materials. Strong, long-lasting bond.",
+      "sizes": [
+        "Small Pack",
+        "Medium Pack",
+        "Large Pack",
+        "Bulk/Trade Pack"
+      ],
+      "sheetSize": "Multiple pack sizes available",
+      "quality": "Standard",
+      "color": "#fef3c7",
+      "icon": "🧴",
+      "image": ""
+    },
+    {
+      "id": "rubber-milk",
+      "name": "Rubber Milk (Latex)",
+      "category": "accessories",
+      "badge": "Adhesive",
+      "badgeColor": "#d97706",
+      "description": "Rubber milk / natural latex adhesive for bonding foam, fabric and lightweight materials. Flexible bond, quick drying.",
+      "sizes": [
+        "Small Bottle",
+        "Medium Can",
+        "Large Can"
+      ],
+      "sheetSize": "Multiple sizes available",
+      "quality": "Standard",
+      "color": "#fef9c3",
+      "icon": "🥛",
+      "image": ""
+    },
+    {
+      "id": "tapes",
+      "name": "Tapes",
+      "category": "accessories",
+      "badge": "Packing",
+      "badgeColor": "#059669",
+      "description": "Wide range of packaging tapes — BOPP tape, masking tape, double-sided tape and foam tape for all sealing and bonding needs.",
+      "sizes": [
+        "1 inch",
+        "2 inch",
+        "3 inch",
+        "Custom Width"
+      ],
+      "sheetSize": "Various roll lengths",
+      "quality": "Standard & Heavy Duty",
+      "color": "#d1fae5",
+      "icon": "📎",
+      "image": ""
+    },
+    {
+      "id": "adhesive",
+      "name": "Adhesive / Glue",
+      "category": "accessories",
+      "badge": "Bonding",
+      "badgeColor": "#7c3aed",
+      "description": "All-purpose adhesive and specialty glues for thermocol, foam and general packaging materials. Strong grip, water resistant.",
+      "sizes": [
+        "Small",
+        "Medium",
+        "Large",
+        "Bulk"
+      ],
+      "sheetSize": "Multiple pack sizes",
+      "quality": "Standard",
+      "color": "#ede9fe",
+      "icon": "🔗",
+      "image": ""
+    },
+    {
+      "id": "clapboard",
+      "name": "Clap Board",
+      "category": "accessories",
+      "badge": "Board",
+      "badgeColor": "#b45309",
+      "description": "Corrugated clap boards in big and small sizes. Ideal for signage backing, packaging support and display boards.",
+      "sizes": [
+        "Small",
+        "Big",
+        "Custom Size"
+      ],
+      "sheetSize": "Big & Small sizes available",
+      "quality": "Standard",
+      "color": "#fef3c7",
+      "icon": "🗂️",
+      "image": ""
+    },
+    {
+      "id": "cutters",
+      "name": "Cutters & Knives",
+      "category": "accessories",
+      "badge": "Tools",
+      "badgeColor": "#dc2626",
+      "description": "Sharp, durable cutters, utility knives and scissors for precise cutting of thermocol, foam and sheet materials.",
+      "sizes": [
+        "Small Cutter",
+        "Large Cutter",
+        "Box Knife",
+        "Scissors"
+      ],
+      "sheetSize": "Individual & combo packs",
+      "quality": "Standard",
+      "color": "#fee2e2",
+      "icon": "✂️",
+      "image": ""
+    },
+    {
+      "id": "scissors",
+      "name": "Scissors",
+      "category": "accessories",
+      "badge": "Tools",
+      "badgeColor": "#dc2626",
+      "description": "Heavy-duty scissors suitable for cutting foam sheets, packaging materials and thermocol edges cleanly.",
+      "sizes": [
+        "Small",
+        "Medium",
+        "Large"
+      ],
+      "sheetSize": "Available individually",
+      "quality": "Standard",
+      "color": "#fce7f3",
+      "icon": "✂️",
+      "image": ""
+    }
+  ]
+}
